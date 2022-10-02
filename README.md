@@ -2,9 +2,19 @@
 A rust web framework intended to be the [Laravel](https://laravel.com/) for rust. Extends upon the extremely fast
 [Actix (https://actix.rs/)](https://actix.rs/).
 
+> This framework is very opinionated
+
 ## Goal
 The goal of Axel is to be like Laravel but for Rust to provide a large set of pre-made tooling and functionality that 
 can be easily implemented into your web application to speed up and simply the process of creating backends
+
+## Intended File Structure
+
+- src *Sources*
+  - routes *Routing handlers and functionality*
+  - models *Models for requests, responses, errors, and Database*
+  - stores *Central stores for storing app data*
+  - utils *Utility classes and other functionality*
 
 ## Planned Features
 - Hashing

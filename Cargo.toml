@@ -9,3 +9,11 @@ license="MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix-rt = "2.7.0"
+actix-web = "4"
+
+dotenv = "0.15.0"
+derive_more = "0.99.17"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4.17"
+env_logger = "0.9.1"

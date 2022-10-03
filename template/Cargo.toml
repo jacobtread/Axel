@@ -6,6 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axel = {path = ".."}
+axel = {path = "../axel"}
+axel-derive = {path="../axel-derive"}
 actix-web = "4"
 actix-rt = "2.7.0"
+serde = { version = "1.0", features = ["derive"] }

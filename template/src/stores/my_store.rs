@@ -1,5 +1,5 @@
-use axel::store::Store;
 use std::collections::HashMap;
+use std::sync::RwLock;
 
 #[derive(Debug)]
 pub struct MyStore {

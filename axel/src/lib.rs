@@ -4,17 +4,13 @@ use log::info;
 use std::net::ToSocketAddrs;
 use std::sync::Arc;
 
-pub mod controller;
 pub mod env;
 pub mod macros;
 pub mod services;
 pub mod startup;
 
-pub extern crate actix_web;
-
 // Re-export all the actix web functionality
-pub use actix_web::web::*;
-pub use actix_web::*;
+pub use actix_web;
 
 pub use log;
 

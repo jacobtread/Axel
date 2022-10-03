@@ -3,6 +3,5 @@
 members = [
     "axel",
     "axel-cli",
-    "axel-derive",
     "template"
 ]

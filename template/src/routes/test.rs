@@ -1,4 +1,5 @@
-use axel::{define_routes, get, Responder};
+use axel::actix_web::{get, Responder};
+use axel::define_routes;
 
 // Define the routes that are present in this file
 define_routes![test];

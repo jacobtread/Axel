@@ -8,5 +8,5 @@ define_routes![hello_world];
 /// at GET /hello with "Hello World"
 #[get("/hello")]
 pub async fn hello_world() -> impl Responder {
-    "Hello World"
+    "Hello World From Scoped"
 }

@@ -3,5 +3,5 @@ use std::sync::RwLock;
 
 #[derive(Debug)]
 pub struct MyStore {
-    names: RwLock<HashMap<String, String>>,
+    pub names: RwLock<HashMap<String, String>>,
 }

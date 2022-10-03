@@ -1,29 +1,31 @@
-use axel::log::info;
-use axel::main;
+use crate::stores::my_store::MyStore;
+use actix_web::web::{Data, ServiceConfig};
 use axel::startup::start_axel;
-use axel::{Axel, ServiceConfig};
+use axel::Axel;
+use std::collections::HashMap;
 use std::io;
-use std::sync::Arc;
+use std::sync::{Arc, RwLock};
 
-mod controllers;
 mod routes;
 mod stores;
 
-pub struct StartupShared;
+pub struct StartupData {
+    my_store: Data<MyStore>,
+}
 
 #[actix_web::main]
 async fn main() -> io::Result<()> {
-    let startup_shared = StartupShared {};
-    let startup_shared = Arc::new(startup_shared);
+    let store = MyStore {
+        names: RwLock::new(HashMap::new()),
+    };
+    let startup_shared = StartupData {
+        my_store: Data::new(store),
+    };
+    let startup = Arc::new(startup_shared);
 
-    start_axel(startup_shared, define_services).await
-}
-
-/// Function for defining services called whenever a new
-/// app instance is created.
-#[inline]
-fn define_services(shared: Arc<StartupShared>, cfg: &mut ServiceConfig) {
-    // Configure the routing modules
-    cfg.configure(routes::hello::axel_configure)
-        .configure(routes::test::axel_configure);
+    start_axel(startup, |startup, cfg| {
+        // Configure the routing modules
+        routes::define(startup, cfg);
+    })
+    .await
 }

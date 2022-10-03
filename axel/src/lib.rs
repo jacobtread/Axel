@@ -4,6 +4,7 @@ use log::info;
 use std::net::ToSocketAddrs;
 use std::sync::Arc;
 
+pub mod controller;
 pub mod env;
 pub mod macros;
 pub mod services;

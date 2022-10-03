@@ -5,6 +5,7 @@ use axel::{Axel, ServiceConfig};
 use std::io;
 use std::sync::Arc;
 
+mod controllers;
 mod routes;
 mod stores;
 

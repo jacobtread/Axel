@@ -15,6 +15,7 @@ can be easily implemented into your web application to speed up and simply the p
   - models *Models for requests, responses, errors, and Database*
   - stores *Central stores for storing app data*
   - utils *Utility classes and other functionality*
+  - startup *Logic for starting the server and setting it up*
 
 ## Planned Features
 - Hashing

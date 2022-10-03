@@ -1,4 +1,3 @@
-
 /// Macro for defining a "axel_configure" function which
 /// adds the provided routes as services on the application
 ///
@@ -6,15 +5,6 @@
 /// ```
 /// use axel::define_routes;
 /// define_routes![example, test];
-/// ```
-/// use actix_web::{App, HttpServer};
-/// Hooking these routes onto the main application:
-/// ```
-/// use actix_web::{App, HttpServer};
-/// let server = HttpServer::new(move || {
-///      App::new()
-///          .configure(example::axel_configure)
-///  });
 /// ```
 #[macro_export]
 macro_rules! define_routes {

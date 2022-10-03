@@ -7,8 +7,17 @@ use std::sync::Arc;
 pub mod env;
 pub mod macros;
 pub mod services;
+pub mod startup;
 
-pub struct Axel {}
+pub extern crate actix_web;
+
+// Re-export all the actix web functionality
+pub use actix_web::web::*;
+pub use actix_web::*;
+
+pub use log;
+
+pub struct Axel;
 
 impl Axel {
     /// Creates a new instance of Axel. Initialize Axel.
@@ -18,7 +27,7 @@ impl Axel {
         env_logger::init();
         info!("Loaded environment variables. Starting..");
 
-        Self {}
+        Self
     }
 
     /// Returns the socket address made up of the host and port
@@ -41,31 +50,5 @@ impl Axel {
 
     pub fn services(&self) -> Arc<AxelServices> {
         return AxelServices::new();
-    }
-}
-
-#[cfg(test)]
-mod test {
-    use crate::Axel;
-    use actix_web::{App, HttpServer};
-
-    #[actix::test]
-    async fn test() {
-        let axel = Axel::new();
-        let services = axel.services();
-
-        let server = HttpServer::new(move || {
-            let services = services.clone();
-
-            // Configure the app with axel
-            App::new().configure(|cfg| services.configure(cfg))
-        });
-
-        server
-            .bind(axel.get_address())
-            .unwrap()
-            .run()
-            .await
-            .unwrap();
     }
 }

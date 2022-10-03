@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 axel = {path = ".."}
 actix-web = "4"
+actix-rt = "2.7.0"

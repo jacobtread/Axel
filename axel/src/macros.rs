@@ -17,3 +17,14 @@ macro_rules! define_routes {
         }
     };
 }
+
+#[macro_export]
+macro_rules! define_configure {
+    ($($route:ident),*) => {
+
+        pub fn define(cfg: &mut actix_web::web::ServiceConfig) {
+            cfg
+                $(.configure($route::axel_configure))*;
+        }
+    };
+}

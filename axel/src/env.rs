@@ -1,11 +1,11 @@
-use log::{info, warn};
+use log::warn;
 use std::fmt::Display;
 use std::str::FromStr;
 
 /// Initializes the environment by loading the variables from
 /// the nearest .env file
 pub fn init() {
-    dotenv::dotenv().expect("Failed to startup. Unable to load environment from .env");
+    dotenvy::dotenv().expect("Failed to startup. Unable to load environment from .env");
 }
 
 /// Retrieves an environment variable or returns the provided

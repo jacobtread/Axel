@@ -1,20 +1,9 @@
 [package]
 name = "axel"
-version = "0.1.0"
+version = "0.0.0"
 edition = "2021"
 description = "The Laravel of rust web frameworks & tooling"
-authors=["Jacobtread"]
-license="MIT"
+authors = ["Jacobtread"]
+license = "MIT"
 
 [dependencies]
-actix-rt = "2.7.0"
-actix-web = "4"
-
-derive_more = "0.99.17"
-serde = { version = "1.0", features = ["derive"] }
-log = "0.4.17"
-env_logger = "0.9.1"
-sailfish = "0.6.0"
-argon2 = "0.5.0"
-dotenvy = "0.15.6"
-thiserror = "1"

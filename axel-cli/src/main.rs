@@ -1,3 +1,3 @@
-fn main() {
-    println!("Hello, world!");
-}
+//! NAME RESERVED
+
+fn main() {}

@@ -1,6 +1,5 @@
 # Axel 
-A rust web framework intended to be the [Laravel](https://laravel.com/) for rust. Extends upon the extremely fast
-[Actix (https://actix.rs/)](https://actix.rs/).
+A rust web framework intended to be the [Laravel](https://laravel.com/) for rust.
 
 > This framework is very opinionated
 
